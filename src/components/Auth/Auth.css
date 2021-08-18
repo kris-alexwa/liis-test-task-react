@@ -1,0 +1,98 @@
+.auth-page {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../images/background-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.auth-page::before {
+  background: rgba(255, 255, 255, 0.6);
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.auth {
+  background-color: #ffffff;
+  min-width: 410px;
+  max-height: 338px;
+  padding-bottom: 37px;
+  border-radius: 20px;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  margin: auto;
+  z-index: 1;
+}
+
+.auth__container {
+  margin: auto;
+  max-width: 345px;
+}
+
+.auth__title {
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 53px;
+  margin-bottom: 16px;
+}
+
+.auth__form {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 25px;
+}
+
+.auth__input-container {
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+}
+
+.auth__label {
+  font-size: 16px;
+}
+
+.auth__input {
+  border: 1px solid #c9cacc;
+  border-radius: 4px;
+  height: 34px;
+  margin-top: 7px;
+}
+
+.auth__button {
+  width: 116px;
+  height: 34px;
+  padding: 0;
+  justify-self: end;
+  border: none;
+  border-radius: 4px;
+  background-image: linear-gradient(104deg, #3c4cad 15%, #00c3ff 146%);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  transition: box-shadow 0.5s ease;
+}
+
+.auth__button:hover {
+  box-shadow: 0px 0px 4px #99a0a3;
+}
+
+.auth__button:active {
+  background-image: linear-gradient(104deg, #5362be 15%, #4ad5ff 146%);
+  border: 1.5px solid rgba(29, 138, 216, 0.3);
+}
+
+.auth__input-error {
+  margin-top: 3px;
+  font-size: 12px;
+  color: #eb1717;
+  max-width: 345px;
+  word-wrap: break-word;
+}
