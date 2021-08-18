@@ -1,0 +1,16 @@
+.flight-search {
+    margin-top: 15px;
+    align-self: center;
+    width: 680px;
+    min-height: 895px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.flight-search__container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 65px auto 54px auto;
+    max-width: 580px;
+}

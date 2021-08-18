@@ -1,0 +1,22 @@
+.logout {
+    display: flex;
+    max-width: 118px;
+    align-self: flex-end;
+    margin-top: 26px;
+    margin-right: 31px;
+    background-color: transparent;
+    border: none;
+    font-family: 'SF Pro Text', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #1157A7;
+    cursor: pointer;
+}
+
+.logout__text {
+    margin: 0;
+}
+
+.logout__icon {
+    margin-left: 20px;
+}
