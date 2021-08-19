@@ -1,5 +1,6 @@
 import React from 'react';
 import './Auth.css';
+import { Link } from 'react-router-dom';
 
 function Auth() {
     return (
@@ -19,7 +20,7 @@ function Auth() {
                                 <input id='input-password' minLength='8' pattern="^[^А-Яа-я\s]+$" type='password' className='auth__input'></input>
                                 <span className='auth__input-error'></span>
                             </div>
-                            <button className='auth__button'>Войти</button>
+                            <Link to='/flight-search' className='auth__link' ><button className='auth__button'>Войти</button></Link>
                         </form>
                     </div>
                 </div>

@@ -1,0 +1,6 @@
+.flight-list {
+    font-family: 'SF Pro Text', sans-serif;
+    margin-top: 31px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}

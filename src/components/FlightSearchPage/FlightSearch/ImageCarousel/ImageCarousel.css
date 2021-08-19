@@ -1,0 +1,25 @@
+.image-carousel {
+  display: flex;
+  overflow: hidden;
+  margin: 24px 0 0 0;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  position: relative;
+}
+
+.image-carousel::before {
+  background-image: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 5%
+  );
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}

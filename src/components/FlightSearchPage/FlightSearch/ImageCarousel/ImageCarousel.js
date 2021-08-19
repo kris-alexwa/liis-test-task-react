@@ -4,9 +4,12 @@ import Image from '../Image/Image';
 
 function ImageCarousel() {
     return (
-            <ul className='image-carousel'>
-                <Image />
-            </ul>
+        <ul className='image-carousel'>
+            <Image />
+            <Image />
+            <Image />
+            <Image />
+        </ul>
     )
 }
 

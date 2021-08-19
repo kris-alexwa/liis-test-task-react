@@ -3,6 +3,7 @@ import './FlightSearch.css';
 import Breadcrumbs from './Breadcrumbs/Breadcrumbs';
 import Calendar from './Calendar/Calendar';
 import ImageCarousel from './ImageCarousel/ImageCarousel';
+import FlightList from './FlightList/FlightList';
 
 function FlightSearch() {
     return (
@@ -11,6 +12,7 @@ function FlightSearch() {
                     <Breadcrumbs />
                     <Calendar />
                     <ImageCarousel />
+                    <FlightList />
                 </div>
             </section>
     )
