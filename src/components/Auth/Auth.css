@@ -58,11 +58,19 @@
   font-size: 16px;
 }
 
+.auth__label_error {
+    color: #EB1717;
+}
+
 .auth__input {
   border: 1px solid #c9cacc;
   border-radius: 4px;
   height: 34px;
   margin-top: 7px;
+}
+
+.auth__input_error {
+    border: 1px solid #EB1717;
 }
 
 .auth__button {
@@ -78,6 +86,12 @@
   font-weight: 400;
   color: #ffffff;
   transition: box-shadow 0.5s ease;
+}
+
+.auth__button:disabled {
+    background-image: none;
+    cursor: default;
+    background-color: #99a0a3;
 }
 
 .auth__link {

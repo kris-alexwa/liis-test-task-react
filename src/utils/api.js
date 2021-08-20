@@ -12,9 +12,41 @@ export class Api {
             from: 'Moscow (SVO)',
             to: 'Ufa',
             date: new Date(),
-            airline: 'Aeroflot',
+            airline: 'S7',
             price: 23924,
             id: 2
+        },
+        {
+            from: 'St. Petersburg',
+            to: 'Moscow',
+            date: new Date(),
+            airline: 'Rossya',
+            price: 23924,
+            id: 3
+        },
+        {
+            from: 'Moscow (SVO)',
+            to: 'St. Petersburg',
+            date: new Date(),
+            airline: 'Utair',
+            price: 23924,
+            id: 4
+        },
+        {
+            from: 'St. Petersburg',
+            to: 'Ufa',
+            date: new Date(),
+            airline: 'Aeroflot',
+            price: 23924,
+            id: 5
+        },
+        {
+            from: 'Ufa',
+            to: 'Moscow (SVO)',
+            date: new Date(),
+            airline: 'Aeroflot',
+            price: 23924,
+            id: 6
         }
         ])
     }

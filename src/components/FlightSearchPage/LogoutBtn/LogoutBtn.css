@@ -20,3 +20,8 @@
 .logout__icon {
     margin-left: 20px;
 }
+
+.logout__link {
+    align-self: flex-end;
+    text-decoration: none;
+}

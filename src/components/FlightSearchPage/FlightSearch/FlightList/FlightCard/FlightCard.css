@@ -3,7 +3,7 @@
     justify-content: space-between;
     width: 100%;
     height: 81px;
-    border-bottom: 1px solid #878787;
+    border-bottom: 1px solid rgba(135, 135, 135, 0.2);
     padding-bottom: 17px;
     box-sizing: border-box;
 }
@@ -69,7 +69,6 @@
     background-color: transparent;
     background-repeat: no-repeat;
     grid-column: 2;
-    max-height: 18px;
     width: 21px;
     height: 18px;
     border: none;
@@ -80,6 +79,7 @@
 
 .flight-card__like-btn_active {
     background-image: url(../../../../../images/icons/liked-icon.png);
+    background-size: initial;
 }
 
 .price {

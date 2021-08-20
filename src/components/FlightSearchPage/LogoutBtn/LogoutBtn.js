@@ -1,14 +1,17 @@
 import React from 'react';
 import './LogoutBtn.css';
-import LogOutIcon from '../../../images/icons/logout-icon.png'
+import LogOutIcon from '../../../images/icons/logout-icon.png';
+import { Link } from 'react-router-dom';
 
 function LogoutBtn() {
     return (
         <>
-            <button className='logout'>
-                <p className='logout__text'>Выйти</p>
-                <img className='logout__icon' src={LogOutIcon} alt='Иконка выхода'></img>
-            </button>
+            <Link className='logout__link' to='/'>
+                <button className='logout'>
+                    <p className='logout__text'>Выйти</p>
+                    <img className='logout__icon' src={LogOutIcon} alt='Иконка выхода'></img>
+                </button>
+            </Link>
         </>
     )
 }

@@ -1,6 +1,27 @@
 .flight-list {
-    font-family: 'SF Pro Text', sans-serif;
-    margin-top: 31px;
-    grid-column-start: 1;
-    grid-column-end: 3;
+  font-family: "SF Pro Text", sans-serif;
+  margin-top: 31px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  max-height: 500px;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-right: 11px;
+}
+
+.flight-list::-webkit-scrollbar-track {
+  border: 0;
+  padding: 10px 0;
+  background-color: #E7E7E7;
+}
+
+.flight-list::-webkit-scrollbar {
+  width: 2px;
+}
+
+.flight-list::-webkit-scrollbar-thumb {
+  background-color: #1157A7;
+  border-radius: 10px;
+  width: 5px;
+  height: 8px;
 }

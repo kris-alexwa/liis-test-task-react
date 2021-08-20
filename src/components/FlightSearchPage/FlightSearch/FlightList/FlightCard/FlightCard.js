@@ -14,6 +14,7 @@ function FlightCard(props) {
     function handleLike(event) {
         event.preventDefault();
         setLiked(!liked)
+        props.handleFlightCardBtn(props.flightCard)
     }
 
     const likeBtnClassName = `flight-card__like-btn ${liked ? 'flight-card__like-btn_active' : ''}`
