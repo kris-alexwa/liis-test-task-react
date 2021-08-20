@@ -14,7 +14,7 @@ function FlightCard(props) {
     function handleLike(event) {
         event.preventDefault();
         setLiked(!liked)
-        props.handleFlightCardBtn(props.flightCard)
+        props.handleFlightCardBtn(props.flightCard, liked)
     }
 
     const likeBtnClassName = `flight-card__like-btn ${liked ? 'flight-card__like-btn_active' : ''}`
@@ -37,7 +37,7 @@ function FlightCard(props) {
                     <p className='info__airline'>{props.airline}</p>
                 </div>
             </div>
-            <div className='flight-card__container'>
+            <div className='flight-card__container2'>
                 <button type='submit' className={likeBtnClassName} onClick={handleLike}></button>
                 <p className='price'>Price:&#8194;<span className='price__accent'>{props.price} ₽</span></p>
             </div>

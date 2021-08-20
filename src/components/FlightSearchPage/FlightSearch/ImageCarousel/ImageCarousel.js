@@ -13,17 +13,20 @@ function ImageCarousel() {
     const images = [NewYorkImage1, NewYorkImage2, NewYorkImage3, NewYorkImage4, NewYorkImage5, NewYorkImage6, NewYorkImage7]
 
     const scrollRef = React.useRef()
+    const preventDefault = e => e.preventDefault()
 
     function handleScroll(event) {
-        // if (scrollRef.current.scrollTop + scrollRef.current.clientHeight == scrollRef.current.scrollHeight && event.deltaY > 0) {
-        //     event.preventDefault();
-        // }
-
         scrollRef.current.scrollTo({
-            left: scrollRef.current.scrollLeft + event.deltaY * 2,
-            behavior: 'smooth'
+            left: scrollRef.current.scrollLeft + event.deltaY,
+            behavior: 'auto'
         })
     }
+
+    React.useEffect(() => {
+        scrollRef.current.addEventListener('wheel', preventDefault)
+    }, [], () => {
+        scrollRef.current.removeEventListener('wheel', preventDefault)
+    })
 
     return (
         <ul className='image-carousel' onWheel={handleScroll} ref={scrollRef}>

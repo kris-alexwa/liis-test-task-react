@@ -7,7 +7,7 @@ function FlightList(props) {
     const [flights, setFlights] = React.useState([])
     
     React.useEffect(() => {
-        api.getFlightInfos().then((res) => setFlights(res)).catch((err) => console.log(err))
+        api.getFlightInfos().then((res) => setFlights(res))
     }, [])
 
     return (

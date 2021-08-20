@@ -1,11 +1,13 @@
 import React from 'react';
 import './Auth.css';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function Auth(props) {
     const [emailInputError, setEmailInputError] = React.useState(null);
     const [passwordInputError, setPasswordInputError] = React.useState(null);
     const [formValid, setFormValid] = React.useState(false);
+    const history = useHistory()
+
     const formRef = React.useRef();
 
     const [emailIsValid, setEmailIsValid] = React.useState(false);
@@ -31,7 +33,7 @@ function Auth(props) {
     React.useEffect(() => {
         const isPasswordValid = passwordInputError === null || passwordInputError === ''
         setPasswordIsValid(isPasswordValid)
-    }, [passwordInputError])
+    }, [emailInputError, passwordInputError])
 
 
     const inputEmailErrorClassName = `auth__input ${emailIsValid ? '' : 'auth__input_error'}`;
@@ -39,13 +41,21 @@ function Auth(props) {
     const labelEmailErrorClassName = `auth__label ${emailIsValid ? '' : 'auth__label_error'}`;
     const labelPasswordErrorClassName = `auth__label ${passwordIsValid ? '' : 'auth__label_error'}`;
 
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        props.handleLogin()
+        history.push('/flight-search')
+    }
+
+
     return (
         <>
             <section className='auth-page'>
                 <div className='auth'>
                     <div className='auth__container'>
                         <h1 className='auth__title'>Simple Flight Check</h1>
-                        <form className='auth__form' ref={formRef} onChange={handleFormChange}>
+                        <form className='auth__form' ref={formRef} onChange={handleFormChange} onSubmit={handleSubmit}>
                             <div className='auth__input-container'>
                                 <label htmlFor='input-email' className={labelEmailErrorClassName}>Логин&#58;</label>
                                 <input id='input-email' type='email' required onChange={handleChangeEmail} className={inputEmailErrorClassName}></input>
@@ -56,7 +66,7 @@ function Auth(props) {
                                 <input id='input-password' minLength='8' pattern="^[^А-Яа-я\s]+$" required type='password' onChange={handleChangePassword} className={inputPasswordErrorClassName}></input>
                                 <span className='auth__input-error'>{passwordInputError}</span>
                             </div>
-                            <Link to='/flight-search' className='auth__link' ><button className='auth__button' disabled={!formValid}>Войти</button></Link>
+                            <button type='submit' className='auth__button' disabled={!formValid}>Войти</button>
                         </form>
                     </div>
                 </div>

@@ -7,19 +7,23 @@ import FlightList from './FlightList/FlightList';
 import FavoriteFlights from './FavoriteFlights/FavoriteFlights';
 
 function FlightSearch() {
-    const [likedCard, setLikedCard] = React.useState([])
+    const [likedCards, setLikedCards] = React.useState([])
 
-    function handleFlightCardBtn(flightCard) {
-        const cards = likedCard.some((card) => card.id === flightCard.id)
-        if (cards) {
-            return;
+    function handleFlightCardBtn(flightCard, liked) {
+        const cardExists = likedCards.some((card) => card.id === flightCard.id)
+        if (liked) {
+            if (!cardExists) {
+                return;
+            }
+            const res = likedCards.filter(likedCard => likedCard.id !== flightCard.id)
+            setLikedCards(res)
+        } else {
+            if (cardExists) {
+                return;
+            }
+            setLikedCards([...likedCards, flightCard])
         }
-        setLikedCard([...likedCard, flightCard])
     }
-
-    React.useEffect(() => {
-       
-    }, [likedCard])
 
     return (
         <section className='flight-search'>
@@ -27,7 +31,7 @@ function FlightSearch() {
                 <Breadcrumbs />
                 <Calendar />
                 <ImageCarousel />
-                <FavoriteFlights counter={likedCard.length} />
+                <FavoriteFlights counter={likedCards.length} />
                 <FlightList handleFlightCardBtn={handleFlightCardBtn} />
             </div>
         </section>

@@ -9,6 +9,7 @@
   padding-right: 11px;
 }
 
+/** TODO Сделала только для хрома, для Сафари надо будет отдельно */
 .flight-list::-webkit-scrollbar-track {
   border: 0;
   padding: 10px 0;
