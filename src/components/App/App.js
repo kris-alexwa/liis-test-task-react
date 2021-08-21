@@ -26,7 +26,7 @@ function App() {
     <div className='body'>
       <div className='page'>
         <Switch>
-          <Route exact path='/'>
+          <Route exact path=''>
             <Auth />
           </Route>
           <ProtectedRoute path='/flight-search' component={FlightSearchPage}></ProtectedRoute>
