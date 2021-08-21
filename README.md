@@ -6,4 +6,4 @@
 
 Актуальная версия находится по адресу: https://stupefied-kare-f0165d.netlify.app/
 
-Деплой: `netlify deploy --prod'
+Деплой: `netlify deploy --prod`
