@@ -4,12 +4,12 @@ import LogoutBtn from './LogoutBtn/LogoutBtn';
 import FlightSearch from './FlightSearch/FlightSearch';
 
 
-function FlightSearchPage(props) {
+function FlightSearchPage() {
     return (
         <>
             <section className='flight-search-page'>
                 <div className='flight-search-page__container'>
-                    <LogoutBtn handleLogOut={props.handleLogOut} />
+                    <LogoutBtn />
                     <FlightSearch />
                 </div>
             </section>

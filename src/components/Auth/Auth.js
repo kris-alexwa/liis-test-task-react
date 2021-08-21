@@ -1,8 +1,12 @@
 import React from 'react';
 import './Auth.css';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { actions } from '../../redux/actions';
 
-function Auth(props) {
+function Auth() {
+    const dispatch = useDispatch()
+
     const [emailInputError, setEmailInputError] = React.useState(null);
     const [passwordInputError, setPasswordInputError] = React.useState(null);
     const [formValid, setFormValid] = React.useState(false);
@@ -41,13 +45,12 @@ function Auth(props) {
     const labelEmailErrorClassName = `auth__label ${emailIsValid ? '' : 'auth__label_error'}`;
     const labelPasswordErrorClassName = `auth__label ${passwordIsValid ? '' : 'auth__label_error'}`;
 
-
     function handleSubmit(event) {
         event.preventDefault();
-        props.handleLogin()
+        dispatch(actions.loggedIn())
+
         history.push('/flight-search')
     }
-
 
     return (
         <>

@@ -2,12 +2,15 @@ import React from 'react';
 import './LogoutBtn.css';
 import LogOutIcon from '../../../images/icons/logout-icon.png';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { actions } from '../../../redux/actions';
 
-function LogoutBtn(props) {
+function LogoutBtn() {
+    const dispatch = useDispatch()
     const history = useHistory()
 
     function handleLogOut() {
-        props.handleLogOut()
+        dispatch(actions.loggedOut())
         history.push('/')
     }
 

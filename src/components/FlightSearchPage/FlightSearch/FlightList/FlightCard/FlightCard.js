@@ -4,20 +4,20 @@ import AirplaneIcon from '../../../../../images/icons/airplane.png'
 import RouteArrowIcon from '../../../../../images/icons/route-arrow-icon.png'
 import LineIcon from '../../../../../images/icons/line-icon.png'
 import { format } from 'date-fns';
+import { useDispatch } from 'react-redux';
+import { actions } from '../../../../../redux/actions';
 
 function FlightCard(props) {
+    const dispatch = useDispatch();
     const displayDate = format(props.date, 'dd MMMM, yyyy');
     const displayTime = format(props.date, 'HH:mm');
 
-    const [liked, setLiked] = React.useState(false);
-
     function handleLike(event) {
         event.preventDefault();
-        setLiked(!liked)
-        props.handleFlightCardBtn(props.flightCard, liked)
+        dispatch(actions.likeCard(props.flightCard.id))
     }
 
-    const likeBtnClassName = `flight-card__like-btn ${liked ? 'flight-card__like-btn_active' : ''}`
+    const likeBtnClassName = `flight-card__like-btn ${props.liked ? 'flight-card__like-btn_active' : ''}`
 
     return (
         <div className='flight-card'>
